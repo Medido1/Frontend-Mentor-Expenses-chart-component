@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz@0,9..40;1,9..40&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Roboto:wght@400;700;900&family=Space+Grotesk:wght@500&display=swap');
+
+:root {
+  /* #Font */
+  --font_family : "DM Sans", sans-serif;
+  --regular_weight : 400;
+  --bold-weight : 700;
+  --font_size : 1.125rem;
+
+  /* ## Colors */
+
+  /* ### Primary */
+
+ --Soft_red: hsl(10, 79%, 65%);
+ --Cyan: hsl(186, 34%, 60%);
+
+  /* ### Neutral */
+
+ --Dark_brown: hsl(25, 47%, 15%);
+ --Medium_brown: hsl(28, 10%, 53%);
+ --Cream: hsl(27, 66%, 92%);
+ --Very_pale_orange: hsl(33, 100%, 98%);
+}
+
+/* Css reset */
+*,*::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+p, h1, h2, h3, h4, h5, h6 { /* Avoid text overflows */
+  overflow-wrap: break-word;
+}
+/* attribution styling */
+.attribution { 
+  font-size: .75em; 
+  text-align: center;
+}
+
+.attribution a { 
+  color: hsl(228, 45%, 44%); 
+}
+/* document styling */
+
+body {
+  height: 100vh;
+  background-color: var(--Cream); 
+}
+
+.main,
+.header,
+.week_list,
+.chart_container,
+.footer_right,
+.container__footer {
+  display: flex;
+}
+
+.main {
+  height: 100%;
+  padding: 1.25rem;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font_family);
+  font-size: var(--font_size);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.header,
+.container {
+  border-radius: .75rem;
+  padding: 1rem;
+  width: 100%;
+}
+
+.header {
+  background-color: var(--Soft_red);
+  justify-content: space-between;
+  padding: 1.25rem;
+  color: #fff;
+}
+
+.my_balance {
+  margin-top: .75rem;
+}
+
+.my_balance {
+  font-size: 1.625rem;
+  font-weight: var(--bold-weight);
+}
+
+.container {
+  width: 100%;
+  background-color: #fff;
+  height: 400px;
+}
+
+.container h1 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.chart_container {
+  position: relative;
+  border-bottom: 1px solid var(--Cream);
+  padding-bottom: 1rem;
+  height: 50%;
+  width: 100%;
+  gap: 1vw;
+}
+
+.col_container {
+  width: 25%;
+  align-self: flex-end;
+}
+
+.column {
+  width: 90%;
+  background-color: var(--Soft_red);
+  border-radius: .25rem;
+  cursor: pointer;
+}
+
+.column:hover {
+  opacity: 80%;
+}
+
+.amount{
+  font-size: .875rem;
+  background-color: black;
+  color: white;
+  margin-bottom: .5rem;
+  border-radius: .25rem;
+  padding: .25rem;
+}
+
+.amount.hidden {
+  display: none;
+}
+
+.week_day {
+  margin-top: .5rem;
+  font-size:.875rem;
+  opacity: 50%;
+  text-align: center;
+}
+
+.container__footer {
+  padding-top: 2rem;
+  align-items: center;
+  justify-content: space-between;
+  font-size: .875rem;
+}
+
+.month_total {
+  /* font-size: 1.875rem; */
+  font-size: calc(1.875rem + .75vw);
+  font-weight: var(--bold-weight);
+}
+
+.pale_text {
+  opacity: 50%;
+}
+
+.footer_right {
+  flex-direction: column;
+}
+
+.percentage {
+  align-self: flex-end;
+}
+
+
