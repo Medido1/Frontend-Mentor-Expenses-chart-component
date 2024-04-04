@@ -38,29 +38,27 @@ function getWeekDay() {
   return currentWeekDay;
 }
 
-function displayColumns(data) {
-  const currentWeekDay = getWeekDay();
-  colContainers.forEach((container) => {
-    const col = container.querySelector('.column');
-    const day = container.querySelector('.week_day');
-    const amount = container.querySelector('.amount');
-    if (day.textContent === currentWeekDay) {
-      col.style.backgroundColor = 'hsl(186, 34%, 60%)';
-    }
-
-    data.forEach((date) => {
+function displayColumns(data, currentWeekDay) {
+  data.forEach((date) => {
+    colContainers.forEach((container) => {
+      const col = container.querySelector('.column');
+      const day = container.querySelector('.week_day');
+      const amount = container.querySelector('.amount');
+      if (day.textContent === currentWeekDay) {
+        col.style.backgroundColor = 'hsl(186, 34%, 60%)';
+      }
       if (date.day === day.textContent) {
         col.style.height = `${date.amount * 2.5}px`;
-        col.addEventListener('mouseover', () => {
-          amount.classList.remove('hidden');
-          amount.textContent = `$${date.amount}`;
-        });
-        col.addEventListener('mouseout', () => {
-          amount.classList.add('hidden');
-        });
       }
+      col.addEventListener('mouseover', () => {
+        amount.classList.remove('hidden');
+        amount.textContent = `$${date.amount}`;
+      });
+      col.addEventListener('mouseout', () => {
+        amount.classList.add('hidden');
+      });
     });
   });
 }
 
-displayColumns(myData);
+displayColumns(myData, getWeekDay());
